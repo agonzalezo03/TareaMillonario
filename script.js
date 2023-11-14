@@ -8,21 +8,19 @@ const calculateWealthBtn = document.getElementById('calculate-wealth');
 
 // Vector para almacenar los usuarios
 
+
 const local = localStorage.getItem("usuarios");
 if(local !== null){
   var userList = JSON.parse(local);
   updateDOM();
+  calculateWealth();
 }else{
   var userList = [];
 }
 
-for(i = 0; i < userList.length; i++){
-  console.log(userList[i]);
-}
 
-if(localStorage.getItem("money") !== null && localStorage.getItem("money") > 0){
-  calculateWealth();
-}
+
+
 
 // Función que obtiene de la API un nombre aleatorio,
 // genera una cantidad de dinero aleatoria cuyo máximo es 1.000.000
